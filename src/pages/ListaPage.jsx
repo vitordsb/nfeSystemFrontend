@@ -23,7 +23,7 @@ export default function ListaPage({ reload }) {
   return (
     <section className="container mx-auto px-4 py-6">
       {/* Barra de busca */}
-      <div className="sticky top-0 z-10 mb-6 flex gap-2 rounded-lg border bg-white/70 p-4 backdrop-blur">
+      <div className="sticky top-0 z-10 mb-6 flex gap-2 rounded-lg bg-white/70 p-4 backdrop-blur">
         <input
           type="text"
           placeholder="🔍 Buscar por número da nota..."
@@ -48,10 +48,10 @@ export default function ListaPage({ reload }) {
           {notas.map((nota) => (
             <article
               key={nota._id}
-              className="flex flex-col overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:shadow-lg"
+              className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-lg"
             >
               {/* Cabeçalho */}
-              <header className="border-b p-4">
+              <header className="p-4">
                 <h3 className="text-lg font-medium">NF‑e&nbsp;{nota.numero}</h3>
                 <time className="block text-xs text-slate-500">
                   {new Date(nota.dataEmissao).toLocaleString()}
@@ -95,7 +95,7 @@ export default function ListaPage({ reload }) {
               </div>
 
               {/* Rodapé */}
-              <footer className="flex gap-2 border-t p-4">
+              <footer className="flex gap-2 p-4">
                 <a
                   href={`http://localhost:3001${nota.pdfUrl}`}
                   target="_blank"
@@ -107,7 +107,7 @@ export default function ListaPage({ reload }) {
                 <a
                   href={`http://localhost:3001${nota.pdfUrl}`}
                   download
-                  className="flex-1 rounded-md border border-emerald-600 px-3 py-2 text-center text-sm font-medium text-emerald-600 transition hover:bg-emerald-50"
+                  className="flex-1 rounded-md border-emerald-600 px-3 py-2 text-center text-sm font-medium text-emerald-600 transition hover:bg-emerald-50"
                 >
                   ⬇️ Baixar
                 </a>
