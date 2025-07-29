@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { enviarXmls } from '../services/notaService';
 import { enviarCompraXmls } from '../services/notaCompraService';
 import { Loader2, UploadCloud, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
 
@@ -27,7 +26,7 @@ export default function UploadXml({ onSuccess }) {
       setResults([]);
       setShowDetails(false);
 
-      const resultados = await enviarXmls(xmlFiles);
+      const resultados = await enviarCompraXmls(xmlFiles);
       setResults(resultados);
       setStatus('completed');
       
@@ -89,10 +88,10 @@ export default function UploadXml({ onSuccess }) {
         <div className="text-center">
           <UploadCloud className="w-12 h-12 mx-auto text-slate-400 mb-4" />
           <h3 className="text-lg font-medium text-slate-900 mb-2">
-            Importar Arquivos XML de venda
+            Importar Arquivos XML de compra 
           </h3>
           <p className="text-sm text-slate-600 mb-4">
-            Selecione um ou múltiplos arquivos XML de venda para importar
+            Selecione um ou múltiplos arquivos XML de compra para importar
           </p>
         </div>
 

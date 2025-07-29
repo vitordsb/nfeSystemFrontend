@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import UploadXml from "./pages/UploadXml.jsx";
 import ListaPage from "./pages/ListaPage.jsx";
 import { FileText, Upload, List } from 'lucide-react';
+import ListaCompraPage from "./pages/ListaCompraPage.jsx";
+import UploadCompraXml from "./pages/UploadCompraXml.jsx";
 
 export default function App() {
   const [reload, setReload] = useState(0);
@@ -13,7 +15,11 @@ export default function App() {
     // Muda para a aba de listagem após upload bem-sucedido
     setActiveTab('lista');
   };
-
+  const handleUploadCompraSuccess = () => {
+    setReload((r) => r + 1);
+    // Muda para a aba de listagem de compra após upload bem-sucedido
+    setActiveTab('compra');
+  };
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
@@ -48,9 +54,20 @@ export default function App() {
               }`}
             >
               <Upload className="w-4 h-4" />
-              Importar XML
+              Importar XML de venda
             </button>
             <button
+              onClick={() => setActiveTab('uploadCompra')}
+              className={`flex items-center gap-2 px-1 py-4 border-b-2 text-sm font-medium transition-colors ${
+                activeTab === 'uploadCompra'
+                  ? 'border-indigo-500 text-indigo-600'
+                  : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
+              }`}
+            >
+              <Upload className="w-4 h-4" />
+              Importar XML de compra
+            </button>
+           <button
               onClick={() => setActiveTab('lista')}
               className={`flex items-center gap-2 px-1 py-4 border-b-2 text-sm font-medium transition-colors ${
                 activeTab === 'lista'
@@ -59,8 +76,20 @@ export default function App() {
               }`}
             >
               <List className="w-4 h-4" />
-              Notas Fiscais
-            </button>
+              Notas Fiscais de venda
+             </button>
+            <button
+              onClick={() => setActiveTab('compra')}
+              className={`flex items-center gap-2 px-1 py-4 border-b-2 text-sm font-medium transition-colors ${
+                activeTab === 'compra'
+                  ? 'border-indigo-500 text-indigo-600'
+                  : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
+              }`}
+            >
+              <List className="w-4 h-4" />
+              Notas Fiscais de compra
+             </button>         
+
           </div>
         </div>
       </nav>
@@ -80,16 +109,29 @@ export default function App() {
             <UploadXml onSuccess={handleUploadSuccess} />
           </div>
         )}
+        {activeTab === 'uploadCompra' && (
+          <div className="space-y-6">
+            <div className="text-center">
+              <h2 className="text-xl font-semibold text-slate-900 mb-2">
+                Importar Arquivos XML de compra
+              </h2>
+              <p className="text-slate-600">
+                Selecione um ou múltiplos arquivos XML de NFE para importar e gerar os PDFs automaticamente
+              </p>
+            </div>
+            <UploadCompraXml onSuccess={handleUploadCompraSuccess} />
+          </div>
+        )}
 
         {activeTab === 'lista' && (
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-semibold text-slate-900">
-                  Notas Fiscais Importadas
+                  Notas Fiscais de venda Importadas
                 </h2>
                 <p className="text-slate-600">
-                  Visualize, busque e gerencie suas notas fiscais eletrônicas
+                  Visualize, busque e gerencie suas notas fiscais de venda eletrônicas
                 </p>
               </div>
               <button
@@ -103,7 +145,29 @@ export default function App() {
             <ListaPage reload={reload} />
           </div>
         )}
-      </main>
+         {activeTab === 'compra' && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-xl font-semibold text-slate-900">
+                  Notas Fiscais de compra Importadas
+                </h2>
+                <p className="text-slate-600">
+                  Visualize, busque e gerencie suas notas fiscais de compra eletrônicas
+                </p>
+              </div>
+              <button
+                onClick={() => setActiveTab('upload')}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 transition-colors"
+              >
+                <Upload className="w-4 h-4" />
+                Importar Mais
+              </button>
+            </div>
+            <ListaCompraPage reload={reload} />
+          </div>
+        )}
+     </main>
 
       {/* Footer */}
       <footer className="bg-white border-t mt-16">
