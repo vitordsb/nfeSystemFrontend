@@ -83,15 +83,15 @@ export async function deletarTodasNotasCompra() {
 
 // Função para obter URL do PDF
 export function obterUrlPdf(notaId, download = false) {
-  const baseUrl = api.defaults.baseURL.replace('/api/notas', '');
+  const baseUrl = api.defaults.baseURL.replace('/api/notasCompra', '');
   const downloadParam = download ? '?download=true' : '';
-  return `${baseUrl}/api/notas/${notaId}/pdf${downloadParam}`;
+  return `${baseUrl}/api/notasCompra/${notaId}/pdf${downloadParam}`;
 }
 
 // Função para verificar saúde da API
 export async function verificarSaude() {
   try {
-    const response = await axios.get(api.defaults.baseURL.replace('/api/notas', '/api/health'));
+    const response = await axios.get(api.defaults.baseURL.replace('/api/notasCompra', '/api/health'));
     return response.data;
   } catch (error) {
     return { status: 'ERROR', error: error.message };
