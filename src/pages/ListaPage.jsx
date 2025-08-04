@@ -92,8 +92,8 @@ export default function ListaPage({ reload }) {
               onClick={() => setShowFilters(!showFilters)}
               className={`px-3 py-2 border rounded-md transition-colors ${
                 showFilters 
-                  ? 'bg-pink-50 border-indigo-300 text-indigo-700' 
-                  : 'border-slate-300 text-slate-700 hover:bg-slate-50'
+                  ? 'bg-pink-50 border-pink-300 text-pink-700' 
+                  : 'border-pink-300 text-pink-700 hover:bg-pink-50'
               }`}
             >
               <Filter className="w-4 h-4" />
@@ -101,7 +101,7 @@ export default function ListaPage({ reload }) {
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+              className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 disabled:opacity-50 transition-colors"
             >
               Buscar
             </button>
@@ -247,7 +247,7 @@ export default function ListaPage({ reload }) {
                   <div className="w-px bg-slate-200"></div>
                   <a
                     href={obterUrlPdf(nota._id, true)}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-pink-700 hover:bg-indigo-50 transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-pink-700 hover:bg-pink-50 transition-colors"
                   >
                     <Download className="w-4 h-4" />
                     Baixar

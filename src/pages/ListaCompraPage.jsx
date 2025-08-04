@@ -84,7 +84,7 @@ export default function ListaCompraPage({ reload }) {
                 placeholder="Buscar por número, remetente ou destinatário..."
                 value={filtros.busca}
                 onChange={(e) => setFiltros({ ...filtros, busca: e.target.value })}
-                className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-indigo-500"
+                className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
               />
             </div>
             <button
@@ -92,8 +92,8 @@ export default function ListaCompraPage({ reload }) {
               onClick={() => setShowFilters(!showFilters)}
               className={`px-3 py-2 border rounded-md transition-colors ${
                 showFilters 
-                  ? 'bg-pink-50 border-indigo-300 text-indigo-700' 
-                  : 'border-slate-300 text-slate-700 hover:bg-slate-50'
+                  ? 'bg-pink-50 border-pink-300 text-pink-700' 
+                  : 'border-pink-300 text-pink-700 hover:bg-pink-50'
               }`}
             >
               <Filter className="w-4 h-4" />
@@ -101,7 +101,7 @@ export default function ListaCompraPage({ reload }) {
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+              className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700 disabled:opacity-50 transition-colors"
             >
               Buscar
             </button>
@@ -120,7 +120,7 @@ export default function ListaCompraPage({ reload }) {
                   placeholder="0.00"
                   value={filtros.valorMin}
                   onChange={(e) => setFiltros({ ...filtros, valorMin: e.target.value })}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-indigo-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                 />
               </div>
               <div>
@@ -133,7 +133,7 @@ export default function ListaCompraPage({ reload }) {
                   placeholder="0.00"
                   value={filtros.valorMax}
                   onChange={(e) => setFiltros({ ...filtros, valorMax: e.target.value })}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-indigo-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                 />
               </div>
               <div className="flex items-end">
