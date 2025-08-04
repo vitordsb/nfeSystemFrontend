@@ -84,7 +84,7 @@ export default function ListaPage({ reload }) {
                 placeholder="Buscar por número, remetente ou destinatário..."
                 value={filtros.busca}
                 onChange={(e) => setFiltros({ ...filtros, busca: e.target.value })}
-                className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-indigo-500"
               />
             </div>
             <button
@@ -92,7 +92,7 @@ export default function ListaPage({ reload }) {
               onClick={() => setShowFilters(!showFilters)}
               className={`px-3 py-2 border rounded-md transition-colors ${
                 showFilters 
-                  ? 'bg-indigo-50 border-indigo-300 text-indigo-700' 
+                  ? 'bg-pink-50 border-indigo-300 text-indigo-700' 
                   : 'border-slate-300 text-slate-700 hover:bg-slate-50'
               }`}
             >
@@ -101,7 +101,7 @@ export default function ListaPage({ reload }) {
             <button
               type="submit"
               disabled={loading}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+              className="px-4 py-2 bg-pink-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50 transition-colors"
             >
               Buscar
             </button>
@@ -120,7 +120,7 @@ export default function ListaPage({ reload }) {
                   placeholder="0.00"
                   value={filtros.valorMin}
                   onChange={(e) => setFiltros({ ...filtros, valorMin: e.target.value })}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-indigo-500"
                 />
               </div>
               <div>
@@ -133,7 +133,7 @@ export default function ListaPage({ reload }) {
                   placeholder="0.00"
                   value={filtros.valorMax}
                   onChange={(e) => setFiltros({ ...filtros, valorMax: e.target.value })}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-pink-500 focus:border-indigo-500"
                 />
               </div>
               <div className="flex items-end">
@@ -153,7 +153,7 @@ export default function ListaPage({ reload }) {
       {/* Resultados */}
       {loading ? (
         <div className="text-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-indigo-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-pink-600 mx-auto"></div>
           <p className="mt-2 text-slate-600">Carregando notas...</p>
         </div>
       ) : notas.length === 0 ? (
@@ -162,7 +162,7 @@ export default function ListaPage({ reload }) {
           {(filtros.busca || filtros.valorMin || filtros.valorMax) && (
             <button
               onClick={limparFiltros}
-              className="mt-2 text-indigo-600 hover:text-indigo-800"
+              className="mt-2 text-pink-600 hover:text-indigo-800"
             >
               Limpar filtros
             </button>
@@ -247,7 +247,7 @@ export default function ListaPage({ reload }) {
                   <div className="w-px bg-slate-200"></div>
                   <a
                     href={obterUrlPdf(nota._id, true)}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-indigo-700 hover:bg-indigo-50 transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-pink-700 hover:bg-indigo-50 transition-colors"
                   >
                     <Download className="w-4 h-4" />
                     Baixar

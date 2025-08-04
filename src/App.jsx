@@ -26,15 +26,15 @@ export default function App() {
       <header className="bg-white shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center">
               <FileText className="w-6 h-6 text-white" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-slate-900">
-                Sistema de NFE
+                Sistema de NFE EGP
               </h1>
               <p className="text-sm text-slate-600">
-                Importação e gerenciamento de Notas Fiscais Eletrônicas
+                Importação e gerenciamento de Notas Fiscais Eletrônicas da EGP indústria
               </p>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function App() {
               onClick={() => setActiveTab('upload')}
               className={`flex items-center gap-2 px-1 py-4 border-b-2 text-sm font-medium transition-colors ${
                 activeTab === 'upload'
-                  ? 'border-indigo-500 text-indigo-600'
+                  ? 'border-pink-500 text-pink-600'
                   : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
               }`}
             >
@@ -60,7 +60,7 @@ export default function App() {
               onClick={() => setActiveTab('uploadCompra')}
               className={`flex items-center gap-2 px-1 py-4 border-b-2 text-sm font-medium transition-colors ${
                 activeTab === 'uploadCompra'
-                  ? 'border-indigo-500 text-indigo-600'
+                  ? 'border-pink-500 text-pink-600'
                   : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
               }`}
             >
@@ -71,7 +71,7 @@ export default function App() {
               onClick={() => setActiveTab('lista')}
               className={`flex items-center gap-2 px-1 py-4 border-b-2 text-sm font-medium transition-colors ${
                 activeTab === 'lista'
-                  ? 'border-indigo-500 text-indigo-600'
+                  ? 'border-pink-500 text-pink-600'
                   : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
               }`}
             >
@@ -82,7 +82,7 @@ export default function App() {
               onClick={() => setActiveTab('compra')}
               className={`flex items-center gap-2 px-1 py-4 border-b-2 text-sm font-medium transition-colors ${
                 activeTab === 'compra'
-                  ? 'border-indigo-500 text-indigo-600'
+                  ? 'border-pink-500 text-pink-600'
                   : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
               }`}
             >
@@ -100,7 +100,7 @@ export default function App() {
           <div className="space-y-6">
             <div className="text-center">
               <h2 className="text-xl font-semibold text-slate-900 mb-2">
-                Importar Arquivos XML
+                Importar Arquivos XML de venda
               </h2>
               <p className="text-slate-600">
                 Selecione um ou múltiplos arquivos XML de NFE para importar e gerar os PDFs automaticamente
@@ -136,7 +136,7 @@ export default function App() {
               </div>
               <button
                 onClick={() => setActiveTab('upload')}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-pink-600 text-white text-sm font-medium rounded-md hover:bg-pink-700 transition-colors"
               >
                 <Upload className="w-4 h-4" />
                 Importar Mais
@@ -158,7 +158,7 @@ export default function App() {
               </div>
               <button
                 onClick={() => setActiveTab('uploadCompra')}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-pink-600 text-white text-sm font-medium rounded-md hover:bg-pink-700 transition-colors"
               >
                 <Upload className="w-4 h-4" />
                 Importar Mais
@@ -174,7 +174,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="text-center text-sm text-slate-500">
             <p>
-              Sistema de NFE - Importação e visualização de Notas Fiscais Eletrônicas
+              Sistema de NFE para EGP - Importação e visualização de Notas Fiscais Eletrônicas
             </p>
             <p className="mt-1">
               PDFs gerados automaticamente usando biblioteca oficial da SEFAZ

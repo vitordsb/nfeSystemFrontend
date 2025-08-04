@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { enviarXmls } from '../services/notaService';
-import { enviarCompraXmls } from '../services/notaCompraService';
 import { Loader2, UploadCloud, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
 
 export default function UploadXml({ onSuccess }) {
@@ -99,7 +98,7 @@ export default function UploadXml({ onSuccess }) {
         <button
           onClick={() => fileInputRef.current?.click()}
           disabled={status === 'uploading'}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-pink-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           {status === 'uploading' ? (
             <>
@@ -123,7 +122,7 @@ export default function UploadXml({ onSuccess }) {
               <h4 className="text-lg font-medium">Resultados do Processamento</h4>
               <button
                 onClick={resetUpload}
-                className="text-sm text-indigo-600 hover:text-indigo-800"
+                className="text-sm text-pink-600 hover:text-indigo-800"
               >
                 Novo Upload
               </button>
@@ -191,7 +190,7 @@ export default function UploadXml({ onSuccess }) {
       {/* Loading durante upload */}
       {status === 'uploading' && (
         <div className="mt-6 text-center">
-          <Loader2 className="w-8 h-8 animate-spin mx-auto text-indigo-600" />
+          <Loader2 className="w-8 h-8 animate-spin mx-auto text-pink-600" />
           <p className="mt-2 text-sm text-slate-600">
             Processando arquivos XML e gerando PDFs...
           </p>
