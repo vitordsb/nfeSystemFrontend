@@ -157,7 +157,7 @@ export default function App() {
                 </p>
               </div>
               <button
-                onClick={() => setActiveTab('upload')}
+                onClick={() => setActiveTab('uploadCompra')}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 transition-colors"
               >
                 <Upload className="w-4 h-4" />
